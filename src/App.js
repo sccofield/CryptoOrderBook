@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './app.css'
+import '../src/app.css'
 
 import Header from './components/header';
 import TradingPair from './components/tradingPair';
