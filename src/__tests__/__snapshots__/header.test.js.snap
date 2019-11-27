@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header component should render the header component without crashing 1`] = `
+<h1
+  className="text-center header"
+>
+  Crypto Order Book
+</h1>
+`;

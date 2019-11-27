@@ -1,4 +1,13 @@
 .trading-pair {
-  width: 80%;
-  margin-right: 20px;
+  width: 40%;
+}
+
+.details {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0 0 0;
+}
+
+.details p span {
+  font-weight: 700;
 }

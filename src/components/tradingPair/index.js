@@ -2,21 +2,31 @@ import React from 'react';
 
 import './tradingpair.css';
 
-const TradingPair = () => {
+const TradingPair = (props) => {
+  const {selectedPair} = props
+  const handleChange = (e) => {
+    props.handleChange(JSON.parse(e.target.value))
+  }
+
   return (
     <div className="trading-pair">
-      <select id="inputState" class="form-control">
-        <option selected>Currency Pairs</option>
-        <option>USD/BTC</option>
-        <option>USD/NGN</option>
-        <option>USD/EUR</option>
-        <option>USD/BPD</option>
+      <select 
+        id="inputState" 
+        className="form-control" 
+        onChange={ e => handleChange(e)}
+      >
+        <option>Select Currency Pair</option>
+        { props.pairs.map((pair, index) => {
+          return <option 
+            key={index} 
+            value={JSON.stringify(pair)}>
+            { pair.name }
+          </option>
+        })}
       </select>
-
-      <div>
-        <p><span>Symbol :</span> ltcusd</p>
-        <p><span>Trading :</span> enabled</p>
-        <p><span>description :</span> Litecoin / U.S. dollar</p>
+      <div className="details">
+        <p><span>Symbol: </span>{ selectedPair && selectedPair.url_symbol }</p>
+        <p><span>Description: </span>{ selectedPair && selectedPair.description }</p>
       </div>
     </div>
   )

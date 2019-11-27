@@ -1,33 +1,31 @@
 import React from 'react';
 
-const OrderBook = () => {
+// import './orderbook.css';
+
+
+const OrderBook = (props) => {
+  const { orders } = props
   return (
-    <table class="table">
-      <thead class="thead-dark">
+    <div className={`orders ${props.cssClass}` }>
+    <table className="table">
+      <thead>
         <tr>
           <th scope="col">Price</th>
-          <th scope="col">Size</th>
-          <th scope="col">Total</th>
+          <th scope="col">Amount</th>
+          <th scope="col">Order Id</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>8887.00</td>
-          <td>0.948</td>
-          <td>5.340</td>
+        {orders && orders.map((order, index)=> 
+          <tr key={index}>
+            <td>{order[0]}</td>
+            <td>{order[1]}</td>
+            <td>{order[2]}</td>
         </tr>
-        <tr>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-        </tr>
-        <tr>
-          <td>Larry</td>
-          <td>the Bird</td>
-          <td>@twitter</td>
-        </tr>
+        )}
       </tbody>
     </table>
+    </div>
   )
 }
 

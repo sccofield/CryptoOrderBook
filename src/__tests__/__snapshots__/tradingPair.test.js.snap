@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Trading pair component should render the component 1`] = `
+<div
+  className="trading-pair"
+>
+  <select
+    className="form-control"
+    id="inputState"
+    onChange={[Function]}
+  >
+    <option>
+      Select Currency Pair
+    </option>
+  </select>
+  <div
+    className="details"
+  >
+    <p>
+      <span>
+        Symbol: 
+      </span>
+    </p>
+    <p>
+      <span>
+        Description: 
+      </span>
+    </p>
+  </div>
+</div>
+`;
